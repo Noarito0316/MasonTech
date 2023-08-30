@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2023/04/08 17:34:51.000.986,=C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/07/10 16:55:25.000.999,=C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/07/10 17:36:15.000.316,D:\Aplicativos\MasonTech\Fontes\unPrincipal.dfm=C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2023/07/10 17:36:15.000.316,D:\Aplicativos\MasonTech\Fontes\unPrincipal.pas=C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2023/07/10 17:36:32.000.717,D:\Aplicativos\MasonTech\Fontes\MasonTech.dproj=C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Project2.dproj</Transaction>
+    <Transaction>2023/07/11 09:42:11.000.130,=D:\Aplicativos\MasonTech\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/07/11 09:42:48.000.108,=D:\Aplicativos\MasonTech\Fontes\Padrao1.pas</Transaction>
+    <Transaction>2023/07/11 09:43:09.000.554,D:\Aplicativos\MasonTech\Fontes\Padrao1.pas=</Transaction>
+    <Transaction>2023/07/11 09:43:18.000.933,=D:\Aplicativos\MasonTech\Fontes\unMdnoPadrao.pas</Transaction>
+    <Transaction>2023/07/11 09:44:31.000.842,=D:\Aplicativos\MasonTech\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/07/11 09:44:56.000.203,=D:\Aplicativos\MasonTech\Fontes\VarGlobais.pas</Transaction>
+    <Transaction>2023/07/11 09:45:08.000.656,=D:\Aplicativos\MasonTech\Fontes\gsLib.pas</Transaction>
+    <Transaction>2023/07/11 09:57:37.000.871,D:\Aplicativos\MasonTech\Fontes\unTabCargos.dfm=D:\Aplicativos\MasonTech\Fontes\Unit1.dfm</Transaction>
+    <Transaction>2023/07/11 09:57:37.000.871,D:\Aplicativos\MasonTech\Fontes\unTabCargos.pas=D:\Aplicativos\MasonTech\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/08/23 20:12:22.000.502,=D:\Aplicativos\MasonTech\Fontes\Padrao1.pas</Transaction>
+    <Transaction>2023/08/23 20:14:55.000.261,=D:\Aplicativos\MasonTech\Fontes\unMdnoPadrao1.pas</Transaction>
+    <Transaction>2023/08/23 20:38:45.000.102,=D:\Aplicativos\MasonTech\Fontes\udmPrincipal.pas</Transaction>
+    <Transaction>2023/08/23 20:51:27.000.334,=D:\Aplicativos\MasonTech\Fontes\Unit2.pas</Transaction>
+    <Transaction>2023/08/23 21:24:05.000.329,D:\Aplicativos\MasonTech\Fontes\Unit2.pas=D:\Aplicativos\MasonTech\Fontes\unMdnoTabPadrao.pas</Transaction>
+    <Transaction>2023/08/23 21:24:05.000.329,D:\Aplicativos\MasonTech\Fontes\Unit2.dfm=D:\Aplicativos\MasonTech\Fontes\unMdnoTabPadrao.dfm</Transaction>
+    <Transaction>2023/08/23 21:25:15.000.642,D:\Aplicativos\MasonTech\Fontes\unMdnoTabPadrao.pas=D:\Aplicativos\MasonTech\Fontes\unMdnoCadPadrao.pas</Transaction>
+    <Transaction>2023/08/23 21:25:15.000.642,D:\Aplicativos\MasonTech\Fontes\unMdnoTabPadrao.dfm=D:\Aplicativos\MasonTech\Fontes\unMdnoCadPadrao.dfm</Transaction>
+    <Transaction>2023/08/23 21:25:27.000.763,=D:\Aplicativos\MasonTech\Fontes\unMdnoTabPadrao.pas</Transaction>
+    <Transaction>2023/08/23 21:28:35.000.131,=D:\Aplicativos\MasonTech\Fontes\fmePesquisar.pas</Transaction>
+    <Transaction>2023/08/24 19:25:18.000.559,=D:\Aplicativos\MasonTech\Fontes\Unit2.pas</Transaction>
+    <Transaction>2023/08/24 19:34:14.000.652,D:\Aplicativos\MasonTech\Fontes\unSelecionaPadrao.pas=D:\Aplicativos\MasonTech\Fontes\Unit2.pas</Transaction>
+    <Transaction>2023/08/24 19:34:14.000.652,D:\Aplicativos\MasonTech\Fontes\unSelecionaPadrao.dfm=D:\Aplicativos\MasonTech\Fontes\Unit2.dfm</Transaction>
+    <Transaction>2023/08/29 19:41:38.395,=D:\Aplicativos\MasonTech\Fontes\unFrmeEditComposto.pas</Transaction>
+    <Transaction>2023/08/29 19:49:11.276,=D:\Aplicativos\MasonTech\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/08/29 19:57:56.337,D:\Aplicativos\MasonTech\Fontes\unFrmeEditComposto2.pas=D:\Aplicativos\MasonTech\Fontes\Unit1.pas</Transaction>
+    <Transaction>2023/08/29 19:57:56.337,D:\Aplicativos\MasonTech\Fontes\unFrmeEditComposto2.dfm=D:\Aplicativos\MasonTech\Fontes\Unit1.dfm</Transaction>
+    <Transaction>2023/08/29 20:00:49.770,=D:\Aplicativos\MasonTech\Fontes\Unit2.pas</Transaction>
+    <Transaction>2023/08/29 20:01:25.750,=D:\Aplicativos\MasonTech\Fontes\Unit2.pas</Transaction>
+    <Transaction>2023/08/29 20:31:20.597,D:\Aplicativos\MasonTech\Fontes\unLogin.pas=D:\Aplicativos\MasonTech\Fontes\Unit2.pas</Transaction>
+    <Transaction>2023/08/29 20:31:20.597,D:\Aplicativos\MasonTech\Fontes\unLogin.dfm=D:\Aplicativos\MasonTech\Fontes\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

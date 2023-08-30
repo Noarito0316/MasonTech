@@ -1,0 +1,41 @@
+unit fmePesquisar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, dxGDIPlusClasses, Vcl.ExtCtrls, cxTextEdit;
+
+type
+  TfrmePesquisar = class(TFrame)
+    edPesquisa: TcxTextEdit;
+    Image1: TImage;
+    Bevel1: TBevel;
+    procedure edPesquisaEnter(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+implementation
+
+{$R *.dfm}
+
+uses udmPrincipal;
+
+procedure TfrmePesquisar.edPesquisaEnter(Sender: TObject);
+var
+  KeyState: TKeyboardState;
+begin
+  GetKeyboardState(KeyState);
+  if(KeyState[VK_CAPITAL] = 0) then
+  begin
+      Keybd_Event(VK_CAPITAL, 1, KEYEVENTF_EXTENDEDKEY or 0, 0);
+      Keybd_Event(VK_CAPITAL, 1, KEYEVENTF_EXTENDEDKEY or KEYEVENTF_KEYUP, 0);
+  end
+end;
+
+end.

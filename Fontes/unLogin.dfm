@@ -1,0 +1,309 @@
+inherited frmLogin: TfrmLogin
+  BorderStyle = bsNone
+  Caption = 'frmLogin'
+  ClientHeight = 471
+  ClientWidth = 686
+  Color = clGray
+  Font.Color = clWhite
+  Font.Height = -13
+  Font.Name = 'Segoe UI Semibold'
+  PixelsPerInch = 96
+  TextHeight = 17
+  object pnlForm: TPanel
+    AlignWithMargins = True
+    Left = 2
+    Top = 2
+    Width = 682
+    Height = 467
+    Margins.Left = 2
+    Margins.Top = 2
+    Margins.Right = 2
+    Margins.Bottom = 2
+    Align = alClient
+    BevelOuter = bvNone
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitLeft = 408
+    ExplicitTop = 240
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object pnlCabecalho: TPanel
+      Left = 0
+      Top = 0
+      Width = 682
+      Height = 40
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = ' Login do Sistema'
+      Color = clGray
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -24
+      Font.Name = 'Segoe UI Semibold'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+      VerticalAlignment = taAlignTop
+    end
+    object Panel1: TPanel
+      Left = 0
+      Top = 40
+      Width = 337
+      Height = 427
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alLeft
+      BevelOuter = bvNone
+      Color = 15004145
+      ParentBackground = False
+      TabOrder = 1
+      ExplicitTop = 35
+      object Image1: TImage
+        Left = 96
+        Top = 145
+        Width = 145
+        Height = 137
+      end
+      object cxLabel3: TcxLabel
+        Left = 0
+        Top = 3
+        AutoSize = False
+        Caption = 'Bem Vindo ao'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -20
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.StyleController = dmPrincipal.cxLabelStyleNormal
+        Style.IsFontAssigned = True
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Height = 50
+        Width = 333
+        AnchorX = 167
+        AnchorY = 28
+      end
+      object cxLabel4: TcxLabel
+        Left = 0
+        Top = 108
+        AutoSize = False
+        Caption = 'MasonTech'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -20
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.StyleController = dmPrincipal.cxLabelStyleNormal
+        Style.IsFontAssigned = True
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Height = 35
+        Width = 333
+        AnchorX = 167
+        AnchorY = 126
+      end
+      object lblVersaoSys: TcxLabel
+        Left = 0
+        Top = 282
+        AutoSize = False
+        Caption = 'Vers'#227'o: 9.9.9.99'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -20
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.StyleController = dmPrincipal.cxLabelStyleNormal
+        Style.IsFontAssigned = True
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Height = 35
+        Width = 333
+        AnchorX = 167
+        AnchorY = 300
+      end
+      object cxLabel6: TcxLabel
+        Left = 0
+        Top = 343
+        AutoSize = False
+        Caption = 'GeraSys Solu'#231#245'es em T.I.'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -20
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.StyleController = dmPrincipal.cxLabelStyleNormal
+        Style.IsFontAssigned = True
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Properties.WordWrap = True
+        Height = 36
+        Width = 333
+        AnchorX = 167
+        AnchorY = 361
+      end
+      object cxLabel5: TcxLabel
+        Left = 0
+        Top = 376
+        AutoSize = False
+        Caption = 'Todos os Direitos Reservados (c)'
+        ParentFont = False
+        Style.Font.Charset = DEFAULT_CHARSET
+        Style.Font.Color = clWhite
+        Style.Font.Height = -20
+        Style.Font.Name = 'Segoe UI'
+        Style.Font.Style = [fsBold]
+        Style.StyleController = dmPrincipal.cxLabelStyleNormal
+        Style.IsFontAssigned = True
+        Properties.Alignment.Horz = taCenter
+        Properties.Alignment.Vert = taVCenter
+        Properties.WordWrap = True
+        Height = 27
+        Width = 333
+        AnchorX = 167
+        AnchorY = 390
+      end
+    end
+    object cxLabel1: TcxLabel
+      Left = 384
+      Top = 103
+      Caption = 'Usu'#225'rio:'
+      ParentFont = False
+      Style.StyleController = dmPrincipal.cxLabelStyleNormal
+    end
+    object cxLabel2: TcxLabel
+      Left = 384
+      Top = 231
+      Caption = 'Senha:'
+      ParentFont = False
+      Style.StyleController = dmPrincipal.cxLabelStyleNormal
+    end
+    object cxTextEdit1: TcxTextEdit
+      Left = 385
+      Top = 121
+      AutoSize = False
+      ParentFont = False
+      ParentShowHint = False
+      Properties.MaxLength = 15
+      Properties.Nullstring = '0'
+      ShowHint = True
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWhite
+      Style.Font.Height = -16
+      Style.Font.Name = 'Segoe UI Semibold'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+      TabOrder = 4
+      TextHint = 'Informe o Usu'#225'ro'
+      Height = 34
+      Width = 257
+    end
+    object cxTextEdit2: TcxTextEdit
+      Left = 384
+      Top = 248
+      AutoSize = False
+      ParentFont = False
+      ParentShowHint = False
+      Properties.EchoMode = eemPassword
+      Properties.MaxLength = 12
+      Properties.Nullstring = '0'
+      ShowHint = True
+      Style.Font.Charset = DEFAULT_CHARSET
+      Style.Font.Color = clWhite
+      Style.Font.Height = -16
+      Style.Font.Name = 'Segoe UI Semibold'
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+      TabOrder = 5
+      TextHint = 'Informe a Senha'
+      Height = 34
+      Width = 257
+    end
+    object btnSalvar: TcxButton
+      Tag = 1
+      AlignWithMargins = True
+      Left = 385
+      Top = 380
+      Width = 125
+      Height = 34
+      Cursor = crHandPoint
+      Caption = '&Confirma'
+      Colors.Normal = 8404992
+      Colors.NormalText = 8404992
+      Colors.HotText = 8404992
+      LookAndFeel.Kind = lfOffice11
+      LookAndFeel.NativeStyle = True
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+        F40000001974455874536F6674776172650041646F626520496D616765526561
+        647971C9653C00000021744558745469746C65004170706C793B4F4B3B436865
+        636B3B426172733B526962626F6E3B6463C868000000D349444154785EEDD031
+        0E414110C671EF155AE25E4844E3105A5771042587F00AC481288C9984CC32C5
+        97CD66669B2DBE76FEBFCC8888AAEE27D0000DB03BEC3D96DEEF6B01243EE70D
+        BC6934E01B7FF0887713442440E3BA81D71940505C304BF08188B80504C72D20
+        388E019D5F1C03B6BC236FEC19B7008DBF3EFA1340C0B8E072009B244E1881E3
+        B98009EFAA718080F17C400602C40B001081E265008C3883783100236C7C2121
+        07802250DC0FA088FB5FFCC95B49C017A09B092289AF25100750C445E391005D
+        2F0107409D354003BC016C58E4B7FAF5E18F0000000049454E44AE426082}
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      TabOrder = 6
+      TabStop = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object btnCancelar: TcxButton
+      Tag = 1
+      AlignWithMargins = True
+      Left = 516
+      Top = 381
+      Width = 125
+      Height = 34
+      Cursor = crHandPoint
+      Caption = '&Cancelar'
+      Colors.Normal = 8404992
+      Colors.NormalText = 8404992
+      Colors.HotText = 8404992
+      LookAndFeel.Kind = lfOffice11
+      LookAndFeel.NativeStyle = True
+      OptionsImage.Glyph.SourceDPI = 96
+      OptionsImage.Glyph.Data = {
+        89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+        F40000001974455874536F6674776172650041646F626520496D616765526561
+        647971C9653C00000023744558745469746C650043616E63656C3B53746F703B
+        457869743B426172733B526962626F6E3B4C9696B2000000F549444154785EED
+        D7310AC240108561B31750922BD9A44802F1081E554451B4F62AA9D6090CAC84
+        98C7CC63D122C56BF7FF8A8DAC9B18E34FF79F8015F03AEE994DCF0A5EC05676
+        92D51E80C61BD959B63301347E9345D960447CC6073DE3FE0D31170FAA8E3A0F
+        22C5757A6601018A38243D42E0B8623AEB1DE801828863004470710C3020709C
+        0060048A93008C00711A801138CE033022C547686E40B300A83300707C8AC805
+        680C97B066009678B7F489D2001CC7BF132400C7ED080C40F1364509040018E2
+        1C622E5EC82E20EE415C2D0F9252F670C6C7C014F19455D63B50AABA251EA5BD
+        9E5179BF8290FB59BEFE335A016F69850D637E4FD7AD0000000049454E44AE42
+        6082}
+      SpeedButtonOptions.CanBeFocused = False
+      SpeedButtonOptions.Flat = True
+      TabOrder = 7
+      TabStop = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = btnCancelarClick
+    end
+  end
+end

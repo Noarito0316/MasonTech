@@ -1,0 +1,215 @@
+unit unMdnoTabPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Padrao1, cxGraphics, cxControls, cxLookAndFeels,
+  cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, cxStyles, cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxNavigator, dxDateRanges,
+  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+  cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxClasses, cxGridCustomView, cxGrid, unFrmePesquisar, cxLabel, Vcl.Buttons,
+  Vcl.ExtCtrls, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet, udmFD_Padrao, Vcl.Menus, Vcl.StdCtrls,
+  cxButtons, unMdnoPadrao;
+
+type
+  TfrmMdnoTabPadrao = class(TfrmMdnoPadrao)
+    pnlLateral: TPanel;
+    btnNovo: TcxButton;
+    btnAltera: TcxButton;
+    btnExclui: TcxButton;
+    GridTable: TcxGrid;
+    GridTableDBTableView1: TcxGridDBTableView;
+    GridTableDBTableView1Column7: TcxGridDBColumn;
+    GridTableDBTableView1Column8: TcxGridDBColumn;
+    GridTableLevel1: TcxGridLevel;
+    DataSource1: TDataSource;
+    frmePesquisar1: TfrmePesquisar;
+    lblQtdeRegistros: TcxLabel;
+    cxLabel1: TcxLabel;
+    btnAtualizar_: TcxButton;
+    btmnImprimir: TcxButton;
+    procedure btnAtualizar_Click(Sender: TObject);
+    procedure frmePesquisar1edPesquisaPropertiesChange(Sender: TObject);
+    procedure btnExcluiClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormShow(Sender: TObject);
+    procedure GridTableDBTableView1DblClick(Sender: TObject);
+    procedure btnAlteraClick(Sender: TObject);
+  private
+    { Private declarations }
+    FDataModule : TdmFD_Padrao;
+
+    FTextPesq : String;
+    FNomeTabUser : String;
+    FGenero : String;
+    FCampoPesq1: string;
+    FCampoPesq2: string;
+    FCampoPesq3: string;
+    FCampoPesq4: string;
+
+  public
+    { Public declarations }
+    property _DataModule : TdmFD_Padrao read FDataModule write FDataModule;
+    property NomeTabUser : string read FNomeTabUser write FNomeTabUser;
+    property Genero      : string read FGenero write FGenero;
+
+    procedure PermissoesUsuario(iIdUsuario: integer; sNomeTab: String);
+
+  end;
+
+var
+  frmMdnoTabPadrao: TfrmMdnoTabPadrao;
+
+implementation
+
+{$R *.dfm}
+
+uses gsLib, UtilsDb, udmPrincipal;
+
+procedure TfrmMdnoTabPadrao.btnAlteraClick(Sender: TObject);
+begin
+  //;
+end;
+
+procedure TfrmMdnoTabPadrao.btnAtualizar_Click(Sender: TObject);
+begin
+  inherited;
+  DataSource1.DataSet.Close;
+  DataSource1.DataSet.Open;
+  frmePesquisar1edPesquisaPropertiesChange(Self);
+
+end;
+
+procedure TfrmMdnoTabPadrao.btnExcluiClick(Sender: TObject);
+begin
+  inherited;
+  if MdnoConfirma('Deseja Realmente EXCLUIR ess'+Iif(FGenero='M','a','o')+' '+FNomeTabUser+' ? ','DELETE') then
+     dmFD_Padrao.fdDeleteRegistro;
+end;
+
+procedure TfrmMdnoTabPadrao.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  DataSource1.DataSet.Close;
+end;
+
+procedure TfrmMdnoTabPadrao.FormCreate(Sender: TObject);
+begin
+  inherited;
+
+  FCampoPesq1 := 'id';
+  FCampoPesq1 := 'descricao';
+  FTextPesq   := EmptyStr;
+
+  lblQtdeRegistros.Caption := '0';
+
+end;
+
+procedure TfrmMdnoTabPadrao.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+
+  if (Shift = []) and (Key = VK_F3)  then
+  begin
+     if frmePesquisar1.edPesquisa.Visible then
+        frmePesquisar1.edPesquisa.SetFocus;
+  end else
+  if (Shift = []) and (Key = VK_F5)  then
+  begin
+     btnAtualizar_.Click;
+  end else
+  if (Shift = []) and (Key = VK_INSERT)  then
+  begin
+     if btnNovo.Enabled then btnNovo.Click;
+  end else
+  if (Shift = []) and (Key = VK_F2)  then
+  begin
+     if btnAltera.Enabled then btnAltera.Click;
+  end else
+  if (Shift = [ssCtrl]) and ((Key = 80) or (Key = 112))  then
+  begin
+     if (btnImprimir_.Enabled) and (btnImprimir_.Visible) then btnImprimir_.Click;
+  end else
+     inherited;
+
+end;
+
+procedure TfrmMdnoTabPadrao.FormShow(Sender: TObject);
+begin
+
+  inherited;
+
+   Top := 100;
+   Left := CentralizaForm_Horizontal(Width);
+   Application.ProcessMessages;
+
+   DataSource1.DataSet.Open;
+   GridTable.SetFocus;
+
+   lblQtdeRegistros.Caption := FormatCurr(',0',DataSource1.DataSet.RecordCount);
+
+end;
+
+procedure TfrmMdnoTabPadrao.frmePesquisar1edPesquisaPropertiesChange(
+  Sender: TObject);
+begin
+
+  FDataModule.TextPesq := frmePesquisar1.edPesquisa.Text;
+  DataSource1.DataSet.Filtered := False;
+
+  DataSource1.DataSet.Filtered := Trim(frmePesquisar1.edPesquisa.Text) <> '';
+
+  if frmePesquisar1.edPesquisa.Text = EmptyStr then
+     lblQtdeRegistros.Caption := FormatCurr(',0',DataSource1.DataSet.RecordCount);
+
+end;
+
+procedure TfrmMdnoTabPadrao.GridTableDBTableView1DblClick(Sender: TObject);
+begin
+  btnAltera.Click;
+end;
+
+procedure TfrmMdnoTabPadrao.PermissoesUsuario(iIdUsuario: integer; sNomeTab: String);
+Var
+  oQry1    : TFDQuery;
+  sTextSQL : String;
+begin
+
+  sTextSQL := 'SELECT INCLUIR,ALTERAR,EXCLUIR FROM USUARIO_PERMISSAO_TABELA '+
+     'WHERE (ID_USUARIO = '+IntToStr(iIdUsuario)+') AND (NOME_TABELA = '+QuotedStr(sNomeTab)+')';
+
+  try
+     oqry1 := TFDQuery.Create(Self);
+     oqry1.Connection := dmPrincipal.fdConn;
+     oqry1.SQL.Add(sTextSQL);
+     oqry1.Open;
+     btnNovo.Enabled   := (oqry1.FieldByName('INCLUIR').Value='S');
+     btnAltera.Enabled:= (oqry1.FieldByName('ALTERAR').Value='S');
+     btnExclui.Enabled:= (oqry1.FieldByName('EXCLUIR').Value='S');
+
+     oqry1.Close;
+     sTextSQL := 'SELECT REL_TABELAS FROM USUARIO WHERE ID = '+IntToStr(iIdUsuario);
+     oqry1.SQL.Clear;
+     oqry1.SQL.Add(sTextSQL);
+     oqry1.Open;
+     btnImprimir_.Enabled := (oqry1.FieldByName('REL_TABELAS').Value='S');
+  finally
+     oqry1.Close;
+     FreeAndNil(oqry1);
+  end;
+
+end;
+
+
+end.

@@ -1,0 +1,28 @@
+unit unSelecionaPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, unMdnoPadrao1, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, Vcl.Menus, Vcl.StdCtrls, cxButtons, cxLabel,
+  Vcl.ExtCtrls;
+
+type
+  TfrmMdnoSelecionaPadrao = class(TfrmMdnoPadrao1)
+    btnNovo: TcxButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMdnoSelecionaPadrao: TfrmMdnoSelecionaPadrao;
+
+implementation
+
+{$R *.dfm}
+
+end.

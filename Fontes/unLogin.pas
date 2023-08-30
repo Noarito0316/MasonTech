@@ -1,0 +1,50 @@
+unit unLogin;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Padrao1, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, Vcl.Menus, Vcl.ExtCtrls, Vcl.StdCtrls, cxButtons,
+  cxTextEdit, cxLabel;
+
+type
+  TfrmLogin = class(TfrmPadrao1)
+    pnlForm: TPanel;
+    pnlCabecalho: TPanel;
+    Panel1: TPanel;
+    cxLabel1: TcxLabel;
+    cxLabel2: TcxLabel;
+    cxTextEdit1: TcxTextEdit;
+    cxTextEdit2: TcxTextEdit;
+    btnSalvar: TcxButton;
+    btnCancelar: TcxButton;
+    cxLabel3: TcxLabel;
+    cxLabel4: TcxLabel;
+    lblVersaoSys: TcxLabel;
+    cxLabel6: TcxLabel;
+    cxLabel5: TcxLabel;
+    Image1: TImage;
+    procedure btnCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmLogin: TfrmLogin;
+
+implementation
+
+{$R *.dfm}
+
+uses udmPrincipal;
+
+procedure TfrmLogin.btnCancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

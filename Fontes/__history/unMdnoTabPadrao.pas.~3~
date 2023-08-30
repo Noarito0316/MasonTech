@@ -1,0 +1,44 @@
+unit unMdnoTabPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, unMdnoPadrao1, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, cxStyles, cxCustomData, cxFilter, cxData,
+  cxDataStorage, cxNavigator, dxDateRanges,
+  cxDataControllerConditionalFormattingRulesManagerDialog, Data.DB, cxDBData,
+  cxGridLevel, cxGridCustomTableView, cxGridTableView, cxGridDBTableView,
+  cxClasses, cxGridCustomView, cxGrid, dxStatusBar, cxLabel, Vcl.ExtCtrls,
+  Vcl.Menus, cxDBNavigator, Vcl.StdCtrls, cxButtons;
+
+type
+  TfrmMdnoTabPadrao = class(TfrmMdnoPadrao1)
+    Panel1: TPanel;
+    GridTable: TcxGrid;
+    GridTableDBTableView1: TcxGridDBTableView;
+    GridTableDBTableView1Column7: TcxGridDBColumn;
+    GridTableDBTableView1Column8: TcxGridDBColumn;
+    GridTableLevel1: TcxGridLevel;
+    btnNovo: TcxButton;
+    btnAlterar: TcxButton;
+    btnExcluir: TcxButton;
+    Nav2: TcxDBNavigator;
+    Nav1: TcxDBNavigator;
+    btnPesquisar: TcxButton;
+    DataSource1: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMdnoTabPadrao: TfrmMdnoTabPadrao;
+
+implementation
+
+{$R *.dfm}
+
+end.

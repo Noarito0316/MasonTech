@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/05/10 15:31:31.000.374,=C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/05/10 15:35:23.000.987,C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas=D:\Aplicativos\Remun_Mdno.pas</Transaction>
+    <Transaction>2022/05/10 15:35:23.000.987,C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.dfm=D:\Aplicativos\Remun_Mdno.dfm</Transaction>
+    <Transaction>2022/05/10 15:37:22.000.366,C:\Users\DELL\OneDrive\Documentos\Embarcadero\Studio\Projects\Project2.dproj=D:\Aplicativos\Moderno\Remuneratus\Fontes\Remuneratus.dproj</Transaction>
+    <Transaction>2022/05/10 15:37:43.000.353,D:\Aplicativos\Remun_Mdno.dfm=D:\Aplicativos\Moderno\Remuneratus\Fontes\unPrincipal.dfm</Transaction>
+    <Transaction>2022/05/10 15:37:43.000.353,D:\Aplicativos\Remun_Mdno.pas=D:\Aplicativos\Moderno\Remuneratus\Fontes\unPrincipal.pas</Transaction>
+    <Transaction>2022/05/10 15:39:11.000.449,=D:\Aplicativos\Moderno\Remuneratus\Fontes\udmPrincipal.pas</Transaction>
+    <Transaction>2022/05/10 15:42:07.000.652,=D:\Aplicativos\Moderno\Remuneratus\Fontes\gsLib.pas</Transaction>
+    <Transaction>2022/05/10 15:43:12.000.510,=D:\Aplicativos\Moderno\Remuneratus\Fontes\UtilsDb.pas</Transaction>
+    <Transaction>2022/05/10 15:44:25.000.441,=D:\Aplicativos\Moderno\Remuneratus\Fontes\unMensagem.pas</Transaction>
+    <Transaction>2022/05/10 15:46:09.000.365,=D:\Aplicativos\Moderno\Remuneratus\Fontes\unMdnoPadrao.pas</Transaction>
+    <Transaction>2022/05/10 15:50:55.000.898,=D:\Aplicativos\Moderno\Remuneratus\Fontes\unFrmePesquisar.pas</Transaction>
+    <Transaction>2022/05/10 15:51:57.000.405,=D:\Aplicativos\Moderno\Remuneratus\Fontes\unMdnoTabPadrao.pas</Transaction>
+    <Transaction>2022/05/10 16:02:23.000.233,=D:\Aplicativos\Moderno\Remuneratus\Fontes\unMdnoAddEditPadrao.pas</Transaction>
+    <Transaction>2022/05/10 16:05:06.000.953,=D:\Aplicativos\Moderno\Remuneratus\Fontes\unMdnoSelecionaPadrao.pas</Transaction>
+    <Transaction>2022/05/10 16:08:21.000.140,=D:\Aplicativos\Moderno\Remuneratus\Fontes\udmFD_Padrao.pas</Transaction>
+    <Transaction>2022/05/10 16:51:25.000.663,=D:\Aplicativos\Moderno\Remuneratus\Fontes\VarGlobais.pas</Transaction>
+    <Transaction>2022/05/10 16:53:32.000.468,=D:\Aplicativos\Moderno\Remuneratus\Fontes\Padrao1.pas</Transaction>
+    <Transaction>2022/05/10 16:54:03.000.263,=D:\Aplicativos\Moderno\Remuneratus\Fontes\SelecionaOrgao.pas</Transaction>
+    <Transaction>2022/05/10 16:55:50.000.870,=D:\Aplicativos\Moderno\Remuneratus\Fontes\CriaUsuarioBanco.pas</Transaction>
+    <Transaction>2022/05/11 09:00:34.000.757,=D:\Aplicativos\Moderno\Remuneratus\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 09:26:27.000.007,D:\Aplicativos\Moderno\Remuneratus\Fontes\unFrmeBarraOpMenu.pas=D:\Aplicativos\Moderno\Remuneratus\Fontes\Unit1.pas</Transaction>
+    <Transaction>2022/05/11 09:26:27.000.007,D:\Aplicativos\Moderno\Remuneratus\Fontes\unFrmeBarraOpMenu.dfm=D:\Aplicativos\Moderno\Remuneratus\Fontes\Unit1.dfm</Transaction>
+    <Transaction>2023/07/10 10:33:52.672,D:\Aplicativos\TechMason\Fontes\TechMason.dproj=D:\Aplicativos\TechMason\Fontes\Remuneratus.dproj</Transaction>
+    <Transaction>2023/07/10 16:53:12.235,D:\Aplicativos\TechMason\Fontes\udmPrincipal.pas=</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="gsLib.pas"/>
+    <File Path="udmFD_Padrao.pas"/>
+    <File Path="udmFD_Padrao.dfm"/>
+    <File Path="unFrmePesquisar.pas"/>
+    <File Path="unFrmePesquisar.dfm"/>
+    <File Path="unMdnoAddEditPadrao.pas"/>
+    <File Path="unMdnoAddEditPadrao.dfm"/>
+    <File Path="unMdnoPadrao.pas"/>
+    <File Path="unMdnoPadrao.dfm"/>
+    <File Path="unMdnoSelecionaPadrao.pas"/>
+    <File Path="unMdnoSelecionaPadrao.dfm"/>
+    <File Path="unMdnoTabPadrao.pas"/>
+    <File Path="unMdnoTabPadrao.dfm"/>
+    <File Path="unMensagem.pas"/>
+    <File Path="unMensagem.dfm"/>
+    <File Path="unPrincipal.pas"/>
+    <File Path="unPrincipal.dfm"/>
+    <File Path="UtilsDb.pas"/>
+    <File Path="VarGlobais.pas"/>
+    <File Path="Padrao1.pas"/>
+    <File Path="Padrao1.dfm"/>
+    <File Path="SelecionaOrgao.pas"/>
+    <File Path="SelecionaOrgao.dfm"/>
+    <File Path="CriaUsuarioBanco.pas"/>
+    <File Path="CriaUsuarioBanco.dfm"/>
+    <File Path="unFrmeBarraOpMenu.pas"/>
+    <File Path="unFrmeBarraOpMenu.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

@@ -1,0 +1,81 @@
+unit unFrmeEditComposto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes,
+  Vcl.Graphics, Vcl.Controls, Vcl.Forms, Vcl.Dialogs, cxGraphics, cxControls,
+  cxLookAndFeels, cxLookAndFeelPainters, cxContainer, cxEdit, dxSkinsCore,
+  dxSkinsDefaultPainters, cxTextEdit, cxDBEdit, Vcl.Buttons, dxGDIPlusClasses,
+  Vcl.ExtCtrls;
+
+type
+  TProcedurePesquisar = procedure(Sender: TObject) of Object;
+  TfrmeEditComposto = class(TFrame)
+    edId: TcxDBTextEdit;
+    edDescricao: TcxDBTextEdit;
+    btnSeleciona: TImage;
+    procedure edIdKeyPress(Sender: TObject; var Key: Char);
+    procedure edIdExit(Sender: TObject);
+    procedure btnSelecionaClick(Sender: TObject);
+    procedure edIdKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+  private
+    FNomeCampoDescr: string;
+    FNomeTab: string;
+    FNomeCampoId: string;
+    FProcedurePesquisar : TProcedurePesquisar;
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure Callback(aEvento : TProcedurePesquisar);
+    property NomeTab        : string read FNomeTab write FNomeTab;
+    property NomeCampoId    : string read FNomeCampoId write FNomeCampoId;
+    property NomeCampoDescr : string read FNomeCampoDescr write FNomeCampoDescr;
+  end;
+
+implementation
+
+{$R *.dfm}
+
+uses udmPrincipal, UtilsDb, gsLib;
+
+procedure TfrmeEditComposto.btnSelecionaClick(Sender: TObject);
+begin
+  if Assigned(FProcedurePesquisar) then
+     FProcedurePesquisar(Sender);
+end;
+
+procedure TfrmeEditComposto.Callback(aEvento: TProcedurePesquisar);
+begin
+   FProcedurePesquisar := aEvento;
+end;
+
+procedure TfrmeEditComposto.edIdExit(Sender: TObject);
+begin
+
+   if edId.Text = EmptyStr then exit;
+
+   if FNomeCampoId = '' then
+      FNomeCampoId := 'id';
+   if FNomeCampoDescr = '' then
+      FNomeCampoDescr := 'descricao';
+
+   edDescricao.Text := Pesquisa(FNomeTab,FNomeCampoId,edId.Text,FNomeCampoDescr,'Identificador Inválido !!!');
+   if edDescricao.Text = EmptyStr then edId.SetFocus;
+
+end;
+
+procedure TfrmeEditComposto.edIdKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  If ((Shift = [ssCtrl]) And (Key = VK_RETURN)) or
+     ((Shift = []) And (Key = VK_F3)) Then
+     btnSelecionaClick(Self);
+end;
+
+procedure TfrmeEditComposto.edIdKeyPress(Sender: TObject; var Key: Char);
+begin
+   if Key in ['0'..'9',#8] then exit else Key := #0;
+end;
+
+end.

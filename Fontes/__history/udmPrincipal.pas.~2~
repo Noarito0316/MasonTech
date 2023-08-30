@@ -1,0 +1,437 @@
+unit udmPrincipal;
+
+interface
+
+uses
+  SysUtils, Classes, WideStrings, DBXFirebird, DB, SqlExpr, cxClasses, cxStyles,
+  cxGridTableView, cxContainer, cxEdit, cxHint, FMTBcd, DBClient, Provider,
+  Windows, Messages, Variants, Graphics, Controls, Forms,
+  Dialogs, cxGraphics, cxLookAndFeels, cxLookAndFeelPainters,
+  StdCtrls, frxExportRTF, frxExportXML, frxExportXLS, frxClass, frxExportPDF,
+  ADODB, dxScreenTip, dxCustomHint, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase,
+  FireDAC.Comp.Client, StrUtils;
+
+type
+  TdmPrincipal = class(TDataModule)
+    SConPrincipal: TSQLConnection;
+    cxEditStyleReadyOnly: TcxEditStyleController;
+    cxEditStyleNormal: TcxEditStyleController;
+    cxEditStyleCheckBox: TcxEditStyleController;
+    cxStyleRepository: TcxStyleRepository;
+    cxStyle1: TcxStyle;
+    cxStyle2: TcxStyle;
+    cxStyle3: TcxStyle;
+    cxStyle4: TcxStyle;
+    cxStyle5: TcxStyle;
+    cxStyle6: TcxStyle;
+    cxStyle7: TcxStyle;
+    cxStyle8: TcxStyle;
+    cxStyle9: TcxStyle;
+    cxStyle10: TcxStyle;
+    cxStyle11: TcxStyle;
+    cxStyle12: TcxStyle;
+    cxStyle13: TcxStyle;
+    cxStyle14: TcxStyle;
+    cxStyle15: TcxStyle;
+    cxStyle16: TcxStyle;
+    cxStyle17: TcxStyle;
+    cxStyle18: TcxStyle;
+    cxStyle19: TcxStyle;
+    cxStyle20: TcxStyle;
+    cxStyle21: TcxStyle;
+    cxStyle22: TcxStyle;
+    cxStyle23: TcxStyle;
+    cxStyle24: TcxStyle;
+    cxStyle25: TcxStyle;
+    cxStyle26: TcxStyle;
+    cxStyle27: TcxStyle;
+    cxStyle28: TcxStyle;
+    cxStyle29: TcxStyle;
+    cxStyle30: TcxStyle;
+    cxStyle31: TcxStyle;
+    cxStyle32: TcxStyle;
+    cxStyle33: TcxStyle;
+    cxStyle34: TcxStyle;
+    cxStyle35: TcxStyle;
+    cxStyle36: TcxStyle;
+    cxStyle37: TcxStyle;
+    cxStyle38: TcxStyle;
+    cxStyle39: TcxStyle;
+    cxStyle40: TcxStyle;
+    cxStyle41: TcxStyle;
+    cxStyle42: TcxStyle;
+    cxStyle43: TcxStyle;
+    cxStyle44: TcxStyle;
+    cxStyle45: TcxStyle;
+    cxStyle46: TcxStyle;
+    cxStyle47: TcxStyle;
+    cxStyle48: TcxStyle;
+    cxStyle49: TcxStyle;
+    cxStyle50: TcxStyle;
+    cxStyle51: TcxStyle;
+    GridTableViewStyleSheetPadrao: TcxGridTableViewStyleSheet;
+    GridTableViewStyleSheetPadrao2: TcxGridTableViewStyleSheet;
+    GridTableViewStyleSheetPadrao3: TcxGridTableViewStyleSheet;
+    GridTableViewStyleSheetPadrao4: TcxGridTableViewStyleSheet;
+    cxStyle52: TcxStyle;
+    GridTableViewStyleSheetPadrao5: TcxGridTableViewStyleSheet;
+    cxStyle53: TcxStyle;
+    cxStyle54: TcxStyle;
+    cxStyle55: TcxStyle;
+    cxStyle56: TcxStyle;
+    cxStyle57: TcxStyle;
+    cxStyle58: TcxStyle;
+    cxStyle59: TcxStyle;
+    cxStyle60: TcxStyle;
+    cxStyle61: TcxStyle;
+    cxStyle62: TcxStyle;
+    cxStyle63: TcxStyle;
+    cxLabelStyleNormal: TcxEditStyleController;
+    cxLabelStyleNormal2: TcxEditStyleController;
+    cxHintStyleController1: TcxHintStyleController;
+    cxLabelStyleNormal3: TcxEditStyleController;
+    cxStyle64: TcxStyle;
+    cxStyle65: TcxStyle;
+    cxStyle66: TcxStyle;
+    cxStyle67: TcxStyle;
+    cxStyle68: TcxStyle;
+    cxStyle69: TcxStyle;
+    cxStyle70: TcxStyle;
+    cxStyle71: TcxStyle;
+    cxStyle72: TcxStyle;
+    cxStyle73: TcxStyle;
+    cxStyle74: TcxStyle;
+    cxStyle75: TcxStyle;
+    cxStyle76: TcxStyle;
+    cxStyle77: TcxStyle;
+    GridTableViewStyleSheetPadrao6: TcxGridTableViewStyleSheet;
+    cxStyle78: TcxStyle;
+    cxStyle79: TcxStyle;
+    cxStyle80: TcxStyle;
+    cxStyle81: TcxStyle;
+    cxStyle82: TcxStyle;
+    cxStyle83: TcxStyle;
+    cxStyle84: TcxStyle;
+    cxStyle85: TcxStyle;
+    cxStyle86: TcxStyle;
+    cxStyle87: TcxStyle;
+    cxStyle88: TcxStyle;
+    cxStyle89: TcxStyle;
+    cxStyle90: TcxStyle;
+    cxStyle91: TcxStyle;
+    cxStyle92: TcxStyle;
+    GridTableViewStyleSheetPadrao7: TcxGridTableViewStyleSheet;
+    cxStyle93: TcxStyle;
+    cxStyle94: TcxStyle;
+    cxStyle95: TcxStyle;
+    cxStyle96: TcxStyle;
+    cxStyle97: TcxStyle;
+    cxStyle98: TcxStyle;
+    cxGridTableViewStyleSheet1: TcxGridTableViewStyleSheet;
+    cxStyle99: TcxStyle;
+    cxStyle100: TcxStyle;
+    cxStyle101: TcxStyle;
+    cxStyle102: TcxStyle;
+    cxStyle103: TcxStyle;
+    cxStyle104: TcxStyle;
+    cxStyle105: TcxStyle;
+    GridTableViewStyleSheetDevExpress: TcxGridTableViewStyleSheet;
+    cxStyle106: TcxStyle;
+    cxStyle107: TcxStyle;
+    cxStyle108: TcxStyle;
+    cxStyle109: TcxStyle;
+    cxStyle110: TcxStyle;
+    cxStyle111: TcxStyle;
+    cxStyle112: TcxStyle;
+    cxStyle113: TcxStyle;
+    cxStyle114: TcxStyle;
+    cxStyle115: TcxStyle;
+    cxStyle116: TcxStyle;
+    cxStyle117: TcxStyle;
+    cxStyle118: TcxStyle;
+    cxStyle119: TcxStyle;
+    cxStyle120: TcxStyle;
+    GridTableViewStyleSheetMaple: TcxGridTableViewStyleSheet;
+    cxStyle121: TcxStyle;
+    cxStyle122: TcxStyle;
+    cxStyle123: TcxStyle;
+    cxStyle124: TcxStyle;
+    cxStyle125: TcxStyle;
+    cxStyle126: TcxStyle;
+    cxStyle127: TcxStyle;
+    cxStyle128: TcxStyle;
+    cxStyle129: TcxStyle;
+    cxStyle130: TcxStyle;
+    cxStyle131: TcxStyle;
+    GridTableViewStyleSheetSlate: TcxGridTableViewStyleSheet;
+    cxStyle132: TcxStyle;
+    cxStyle133: TcxStyle;
+    cxStyle134: TcxStyle;
+    cxStyle135: TcxStyle;
+    cxStyle136: TcxStyle;
+    cxStyle137: TcxStyle;
+    cxStyle138: TcxStyle;
+    cxStyle139: TcxStyle;
+    cxStyle140: TcxStyle;
+    cxStyle141: TcxStyle;
+    cxStyle142: TcxStyle;
+    cxStyle143: TcxStyle;
+    cxStyle144: TcxStyle;
+    cxStyle145: TcxStyle;
+    cxStyle146: TcxStyle;
+    cxStyle147: TcxStyle;
+    cxStyle148: TcxStyle;
+    cxStyle149: TcxStyle;
+    cxStyle150: TcxStyle;
+    cxStyle151: TcxStyle;
+    cxStyle152: TcxStyle;
+    cxStyle153: TcxStyle;
+    GridTableViewStyleSheetPumpkinlarge: TcxGridTableViewStyleSheet;
+    cxStyle154: TcxStyle;
+    cxStyle155: TcxStyle;
+    cxStyle156: TcxStyle;
+    cxStyle157: TcxStyle;
+    cxStyle158: TcxStyle;
+    cxStyle159: TcxStyle;
+    cxStyle160: TcxStyle;
+    cxStyle161: TcxStyle;
+    cxStyle162: TcxStyle;
+    cxStyle163: TcxStyle;
+    cxStyle164: TcxStyle;
+    cxStyle165: TcxStyle;
+    cxStyle166: TcxStyle;
+    sqlConRemoto: TSQLConnection;
+    cxStyle167: TcxStyle;
+    GridTableViewStyleSheetBrick: TcxGridTableViewStyleSheet;
+    cxStyle168: TcxStyle;
+    cxStyle169: TcxStyle;
+    cxStyle170: TcxStyle;
+    cxStyle171: TcxStyle;
+    cxStyle172: TcxStyle;
+    cxStyle173: TcxStyle;
+    cxStyle174: TcxStyle;
+    cxStyle175: TcxStyle;
+    cxStyle176: TcxStyle;
+    cxStyle177: TcxStyle;
+    cxStyle178: TcxStyle;
+    cxStyle179: TcxStyle;
+    cxStyle180: TcxStyle;
+    fdConn: TFDConnection;
+    fdDrive: TFDPhysFBDriverLink;
+    cxEditStyleNormal2: TcxEditStyleController;
+    fdWaitCursor: TFDGUIxWaitCursor;
+    fdTrans: TFDTransaction;
+    procedure SConPrincipalAfterDisconnect(Sender: TObject);
+    procedure SConPrincipalAfterConnect(Sender: TObject);
+    procedure DataModuleCreate(Sender: TObject);
+    procedure SConPrincipalBeforeConnect(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    Procedure GeraLog(oCds1: TClientDataSet; sOperacao,sNomeTab,sNomeForm1,sNomeForm2: String);
+    Function ConectaBanco(sBanco: string): Boolean;
+  end;
+
+var
+  dmPrincipal: TdmPrincipal;
+
+implementation
+
+uses gsLib, UtilsDb, VarGlobais;
+
+{$R *.dfm}
+
+procedure TdmPrincipal.DataModuleCreate(Sender: TObject);
+begin
+
+{
+  Screen.Cursor := crHourGlass;
+
+  dmPrincipal.SConPrincipal.Connected := False;
+
+  SConPrincipal.Connected := False;
+
+  glb_sMultiOrgao := ini_le_secao('Multi_Orgao');
+  if Trim(glb_sMultiOrgao) = '' then
+     glb_sMultiOrgao := 'N';
+
+  ConectaBanco('');
+
+  Screen.Cursor := crDefault;
+}
+
+end;
+
+Function TdmPrincipal.ConectaBanco(sBanco: string): Boolean;
+Var
+  lCriouUsuario: Boolean;
+  sDataBase: String;
+begin
+
+{
+  SConPrincipal.Connected := False;
+  pb_lBancoOk := True;
+
+  if sBanco = '' then
+     sDataBase := GetPathDataBase()
+  else
+     sDataBase := sBanco;
+
+  if sDataBase = '' then
+  begin
+    Result := False;
+    exit;
+  end;
+
+  SConPrincipal.Params.Clear;
+  SConPrincipal.Params.Values['DriverName']       := 'Firebird';
+  SConPrincipal.Params.Values['RoleName']         := 'RoleName';
+  SConPrincipal.Params.Values['User_Name']        := 'GERASYS.TI';
+  SConPrincipal.Params.Values['Password']         := 'gsti2010';
+}
+  //SConPrincipal.Params.Values['User_Name']        := 'SYSDBA';
+  //SConPrincipal.Params.Values['Password']         := 'i2TkWhig1wmBVlLCJEC6';
+{
+  SConPrincipal.Params.Values['ServerCharSet']    := 'WIN1252';
+  SConPrincipal.Params.Values['SQLDialect']       := '3';
+  SConPrincipal.Params.Values['ErrorResourceFile']:= '';
+  SConPrincipal.Params.Values['LocaleCode']       := '0000';
+  SConPrincipal.Params.Values['BlobSize']         := '-1';
+  SConPrincipal.Params.Values['CommitRetain']     := 'False';
+  SConPrincipal.Params.Values['WaitOnLocks']      := 'True';
+  SConPrincipal.Params.Values['IsolationLevel']   := 'ReadCommitted';
+  SConPrincipal.Params.Values['Trim Char']        := 'False';
+  SConPrincipal.Params.Values['DataBase']         := sDataBase;
+
+  Try
+     SConPrincipal.Connected := True;
+  except
+     on E: Exception do
+     begin
+        if Pos('I/O error during',e.Message) > 0 then
+        begin
+           Mensagem('Não foi Possível Conectar c/ o Banco de Dados ...'+#13+
+              'Contate o Suporte do Sistema ...'+#13+
+              '('+E.Message+')',
+              'Erro', MB_ICONERROR+MB_OK);
+           pb_lBancoOk := False;
+        end else
+        if Pos('Your user name and password are not defined',e.Message) > 0 then
+        begin
+           Mensagem('Ainda Não foi criado o Usuário e Senha do Banco de Dados.'+#13+
+                    'Informe o Caminho do aplicativo GSEC.EXE, que o Remuneratu$'+#13+
+                    'fará isso pra você.'+#13+
+                    '('+E.Message+')',
+              'Erro', MB_ICONERROR+MB_OK);
+           frmCriaUsuarioBanco := TfrmCriaUsuarioBanco.Create(Self);
+           frmCriaUsuarioBanco.ShowModal;
+           lCriouUsuario := frmCriaUsuarioBanco.pb_lCriouUsario;
+           FreeAndNil(frmCriaUsuarioBanco);
+           if not lCriouUsuario then
+              pb_lBancoOk := False
+           else
+           begin
+              try
+                 SConPrincipal.Connected := True;
+              except
+              end;
+           end;
+        end;
+     end;
+  End;
+
+  Result := SConPrincipal.Connected;
+}
+End;
+
+procedure TdmPrincipal.SConPrincipalAfterConnect(Sender: TObject);
+Var
+  Servidor,
+  DataBase : String;
+  PosTmp : SmallInt;
+begin
+   {Mensagem('O Banco foi Conectado ...','Aviso !!!',
+     MB_OK+MB_ICONEXCLAMATION);}
+//   fdConn.Params['Server']   := '';
+//   fdConn.Params.Database := SConPrincipal.Params.Values['DataBase'];
+//   fdConn.Connected := True;
+
+//  DataBase := SConPrincipal.Params.Values['DataBase'];
+//  PosTmp   := PositionChar(':',DataBase,1);
+//  Servidor := LeftStr(DataBase,PosTmp-1);
+//  DataBase := Trim(Copy(DataBase,PosTmp+1,255));
+//
+//  fdConn.Connected := False;
+//  fdConn.Params.BeginUpdate;
+//  try
+//    fdConn.Params.Clear;
+//    fdConn.Params.AddPair('DriverID', 'FB');
+//    fdConn.Params.AddPair('Server', Servidor);
+//    fdConn.Params.AddPair('Port', '3050');
+//    fdConn.Params.AddPair('Protocol', 'TCPIP');
+//    fdConn.Params.AddPair('Database', DataBase);
+//    fdConn.Params.AddPair('User_Name', 'GERASYS.TI');
+//    fdConn.Params.AddPair('Password', 'gsti2010');
+//    fdConn.Params.AddPair('CharacterSet', 'WIN1252');
+//  finally
+//    fdConn.Params.EndUpdate;
+//    fdConn.Connected := True;
+//  end;
+
+end;
+
+procedure TdmPrincipal.SConPrincipalAfterDisconnect(Sender: TObject);
+begin
+   {
+   if not SConPrincipal.Connected then
+      Mensagem('*** O Banco Não está conectado ***','Aviso !!!',
+         MB_OK+MB_ICONEXCLAMATION);}
+end;
+
+procedure TdmPrincipal.SConPrincipalBeforeConnect(Sender: TObject);
+Var
+  lCriouUsuario: Boolean;
+begin
+
+{
+  pv_lSemUsuario := False;
+  pv_sMsgErro := '';
+  pb_lBancoOk := True;
+  Screen.Cursor := crHourGlass;
+  if SConPrincipal.Connected then
+     SConPrincipal.Close;
+
+  SConPrincipal.Params.Clear;
+  SConPrincipal.Params.Values['DriverName']       := 'Firebird';
+  SConPrincipal.Params.Values['RoleName']         := 'RoleName';
+  SConPrincipal.Params.Values['User_Name']        := 'GERASYS.TI';
+  SConPrincipal.Params.Values['Password']         := 'gsti2010';
+  SConPrincipal.Params.Values['ServerCharSet']    := 'WIN1252';
+  SConPrincipal.Params.Values['SQLDialect']       := '3';
+  SConPrincipal.Params.Values['ErrorResourceFile']:= '';
+  SConPrincipal.Params.Values['LocaleCode']       := '0000';
+  SConPrincipal.Params.Values['BlobSize']         := '-1';
+  SConPrincipal.Params.Values['CommitRetain']     := 'False';
+  SConPrincipal.Params.Values['WaitOnLocks']      := 'True';
+  SConPrincipal.Params.Values['IsolationLevel']   := 'ReadCommitted';
+  SConPrincipal.Params.Values['Trim Char']        := 'False';
+  SConPrincipal.Params.Values['DataBase']         := GetPathDataBase();
+
+  Try
+     SConPrincipal.Connected := True;
+  except
+     on E: Exception do
+        pv_sMsgErro := e.Message;
+  end;
+
+  Screen.Cursor := crDefault;
+  }
+
+end;
+
+
+end.

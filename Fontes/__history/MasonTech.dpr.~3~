@@ -1,0 +1,18 @@
+program MasonTech;
+
+uses
+  Vcl.Forms,
+  unPrincipal in 'unPrincipal.pas' {frmPrincipal},
+  unMdnoPadrao in 'unMdnoPadrao.pas' {frmMdnoPadrao},
+  unTabCargos in 'unTabCargos.pas' {frmTabCargos},
+  VarGlobais in 'VarGlobais.pas',
+  gsLib in 'gsLib.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.Run;
+end.

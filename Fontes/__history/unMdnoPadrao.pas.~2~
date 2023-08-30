@@ -1,0 +1,99 @@
+unit unMdnoPadrao;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ComCtrls, ImgList, ToolWin, Menus, StdCtrls, DB, jpeg,
+  ExtCtrls, Mask, Buttons, DateUtils, ShellCtrls, DBCGrids, FileCtrl, ShellApi,
+  MidasLib, cxControls, DBCtrls, IniFiles, Registry, DBClient, cxGraphics,
+  cxLookAndFeels, cxLookAndFeelPainters,
+  cxContainer, cxEdit, cxTextEdit, cxDropDownEdit, cxMaskEdit, cxCalendar,
+  dxSkinsCore, dxSkinsDefaultPainters, dxSkinsForm, cxButtons;
+type
+  TfrmMdnoPadrao = class(TForm)
+    pnlForm_: TPanel;
+    shpForm: TShape;
+    pnlBarraTitulo: TPanel;
+    shpLinSeparaTop: TShape;
+    shpLinSeparaBottom: TShape;
+    btnFechar: TcxButton;
+    procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure FormActivate(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure pnlBarraTituloMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure btnFecharClick(Sender: TObject);
+  private
+    //procedure ProcessaMsg(var Msg: TMsg; var Handled: Boolean);
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmMdnoPadrao: TfrmMdnoPadrao;
+
+implementation
+
+uses udmPrincipal, gsLib;
+
+{$R *.dfm}
+
+procedure TfrmMdnoPadrao.btnFecharClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmMdnoPadrao.FormActivate(Sender: TObject);
+begin
+   if not dmPrincipal.SConPrincipal.Connected then
+      dmPrincipal.SConPrincipal.Connected := True;
+   if not dmPrincipal.fdConn.Connected then
+      dmPrincipal.fdConn.Connected := True;
+end;
+
+procedure TfrmMdnoPadrao.FormCreate(Sender: TObject);
+begin
+  Position := poDesigned;
+  Caption := '';
+
+end;
+
+procedure TfrmMdnoPadrao.FormKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+var
+  i: Integer;
+  NotOk: Boolean;
+begin
+
+  Notok := True;
+
+  for i := 0 to ComponentCount - 1 do
+    if ((Components[i] is TcxCustomComboBox) or (Components[i] is TcxCustomDateEdit))
+      and TWinControl(Components[i]).Focused and (TWinControl(Components[i]).Tag = 1)  then
+    begin
+      NotOk := False;
+      Break;
+    end;
+
+  if NotOk then
+  begin
+    If (Shift = []) And (Key = VK_RETURN) Then
+       SelectNext(ActiveControl,True,True)
+    Else
+    If (Shift = [ssShift]) And (Key = VK_RETURN) Then
+       SelectNext(ActiveControl,False,True);
+  end;
+end;
+
+procedure TfrmMdnoPadrao.pnlBarraTituloMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+const
+   sc_DragMove = $f012;
+begin
+   ReleaseCapture;
+   Perform(wm_SysCommand, sc_DragMove, 0);
+end;
+
+end.

@@ -1,0 +1,12 @@
+inherited frmTabCargos: TfrmTabCargos
+  Caption = 'frmTabCargos'
+  FormStyle = fsMDIChild
+  Visible = True
+  PixelsPerInch = 96
+  TextHeight = 15
+  inherited pnlForm_: TPanel
+    inherited pnlBarraTitulo: TPanel
+      Caption = ' Cadastro de Cargos '
+    end
+  end
+end
